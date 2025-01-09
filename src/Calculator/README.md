@@ -8,13 +8,30 @@ Författare: Per Austrin
 
 ## Grammatik
 
+Rekursiv medåkning görs enligt följande grammatik i matematisk notation:
 ```
   Expr -> Term { PM Term }
   Term -> Factor { MD Factor }
 Factor -> NUM | LPAREN Expr RPAREN
 ```
+där
+- det som innesluts av `{` och `}` upprepas noll eller fler gånger
+- `PM` är `+` eller `-`
+- `MD` är `*` eller `/`
+- `NUM` är heltal
+- `LPAREN` är `(` och `RPAREN` är `)`
 
-`PM` är `+` eller `-`, MD är `*` eller `/`
+Språket som parsas kan därför beskrivas med följande LL-grammatik i BNF:
+```
+       <Expr> ::= <Term> <TermList>
+   <TermList> ::= PM <Term> <TermList> | EPS
+       <Term> ::= <Factor> <FactorList>
+ <FactorList> ::= MD <Factor> <FactorList> | EPS
+     <Factor> ::= NUM | LPAREN <Expr> RPAREN
+```
+där `EPS` är tomma strängen.
+
+## Kompilering och körning
 
 Parsar uttrycket och skriver sedan ut värdet av det.
 
