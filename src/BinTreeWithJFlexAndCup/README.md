@@ -37,8 +37,9 @@ inte längre, eftersom dessa saker tas hand om av JFlex och Cup.
 ## Kompilering och körning
 
 Ladda hem [JFlex 1.5.1](https://sourceforge.net/projects/jflex/files/jflex/1.5.1/jflex-1.5.1.tar.gz/download)
-och packa upp arkivet på lämpligt ställe. Kör sedan följande kommandon:
+och packa upp arkivet på lämpligt ställe.
 
+Provkörning från terminal på fil `test.in`:
 ```shell
 path/to/jflex-1.5.1/bin/jflex Lexer.lex
 java -jar path/to/jflex-1.5.1/lib/java-cup-11a.jar -parser Parser Parser.cup

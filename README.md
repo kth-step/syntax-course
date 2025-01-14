@@ -7,6 +7,8 @@ Unless otherwise mentioned, code and other material is available under the [Unli
 ## Contents
 
 - [Calculator](src/Calculator): a recursive-descent parser and evaluator in Java for a small language of arithmetic expressions.
+- [BinTreeParser](src/BinTreeParser): a recursive-descent parser and syntax tree traversal in Java for a small language of binary trees.
+- [BinTreeWithJFlexAndCup](src/BinTreeWithJFlexAndCup): a generated parser (using JFlex and Cup) and syntax tree traversal in Java for a small language of binary trees.
 
 ## Authors
 
