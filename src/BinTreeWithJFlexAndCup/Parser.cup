@@ -1,0 +1,21 @@
+// Cup-specifikation av grammatik för binära träd.
+// Se README.txt för mer info
+// Författare: Per Austrin
+import java_cup.runtime.*;
+
+// Deklarera slut-symboler
+terminal BRANCH;
+terminal LEAF;
+terminal LPAREN;
+terminal RPAREN;
+terminal COMMA;
+terminal Integer NUM;  // Ett tal har data av typen Integer
+
+// Deklarera icke-slutsymboler, bara en i det här fallet
+
+non terminal ParseTree BinTree; //
+
+
+BinTree ::= LEAF LPAREN NUM:t RPAREN {: RESULT = new LeafNode(t); :}
+		| BRANCH LPAREN BinTree:left COMMA BinTree:right RPAREN {: RESULT = new BranchNode(left, right); :}
+		;
